@@ -24,10 +24,12 @@ The dataset used in this project is sourced from Kaggle.It contains information 
   - What is the Average Heart Rate by BMI Category?
   - What is the  Running Total of Daily Steps per Person?
     ### Data Analysis
-    ``` sql  SELECT `BMI Category`, count('person ID') as count
+    
+  ```sql SELECT `BMI Category`, count('person ID') as count
 from sleepdata.sleep_health_and_lifestyle_dataset
 group by `BMI Category`
-order by count;```
+order by count;
+```
 
 select Occupation, avg(`Sleep Duration`) as AVG_Sleep_Duration
 from sleepdata.sleep_health_and_lifestyle_dataset
@@ -61,9 +63,9 @@ ORDER BY avg_heart_rate DESC;
 
 SELECT `Person ID`, `Daily Steps`,
 SUM(`Daily Steps`) OVER(PARTITION BY `Person ID` ORDER BY `Person ID`) AS running_total_steps
-FROM   sleepdata.sleep_health_and_lifestyle_dataset; ```
+FROM   sleepdata.sleep_health_and_lifestyle_dataset;
 
-### Findings
+Findings
 1. Most people fall into the "Normal" category  of 195 people.
 2. Overweight individuals (148) form the second-largest group, which suggests a significant portion of the dataset has higher BMI values.
 3. Engineers (7.98 hrs), Lawyers (7.41 hrs), and Accountants (7.11 hrs) get the highest average sleep.
@@ -72,7 +74,7 @@ FROM   sleepdata.sleep_health_and_lifestyle_dataset; ```
 6.  Overweight individuals have the highest risk of both sleep apnea and insomnia.
 7.  Obese individuals have the highest average heart rate  of 84.30 bpm while Normal BMI individuals have the lowest heart rate of 
 68.73 bpm.
-   ### Recommendations
+ Recommendations
 Based on the analysis , I recommend the following actions:
 1. Investigation of lifestyle factors that contribute to BMI variations
 2. Examination of  stress levels across different occupations and Check if work shifts day/night impact sleep duration.
@@ -80,7 +82,7 @@ Based on the analysis , I recommend the following actions:
 4. Conducting  a lifestyle survey to understand why overweight individuals have the highest cases.
 5. Investigation of blood pressure levels to assess cardiovascular risks in obese individuals.
 6. Identification of stress reduction strategies for those with poor sleep quality.
-### Limitations
+Limitations
 1. The dataset does not specify age, gender, or location, which could impact the analysis
 2. Other factors may influence both sleep quality and BMI, but the dataset may not include these details.
 3. Sleep quality depends on environmental factors (noise, screen time, caffeine intake), which are not in the dataset.
